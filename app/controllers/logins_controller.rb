@@ -9,11 +9,16 @@ class LoginsController < ApplicationController
     
   def val
     logger.debug  params[:uid]
-    if params[:uid]=="kindai" and params[:pass]="sanriko"
+    if User.find_by(uid: params[:uid]) and User.find_by(pass: params[:pass])
       session[:login_uid]=params[:uid]
       redirect_to "/"
     else
-      render "login"
+      render "logins/error"
     end
+  end
+  
+  def logout
+    session[:login_uid]=nil
+    render "login"
   end
 end
