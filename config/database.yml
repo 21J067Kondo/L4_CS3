@@ -23,9 +23,10 @@ test:
 production:
   <<: *default
   adapter: postgresql
-encoding: unicode
-pool: 5
-database: swexe_l3_rails7
-username: swexe_l3_rails7_user
-password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
-url: <%= ENV['DATABASE_URL'] %>
+  encoding: unicode
+  pool: 5
+  database: swexe_l3_rails7
+  username: swexe_l3_rails7_user
+  password: <%= ENV['MYSTE_DATABASE_PASSWORD']%>
+  url: <%= ENV['DATABASE_URL']%>
+  # database: db/production.sqlite3
